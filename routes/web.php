@@ -5,12 +5,15 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\HomeController;
 
 
 
 Route::get('/', function () {
-    return view('layouts.dashboard'); // Tambahkan 'layouts.' sebelum 'dashboard'
+    return view('layouts.app'); // Tambahkan 'layouts.' sebelum 'dashboard'
 })->name('dashboard');
+
+
 
 Route::get('register', function () {
     return view('auth.register');
@@ -20,6 +23,7 @@ Route::get('login', function () {
 });
 
 Route::get('/profile', [ProfileController::class, 'show'])->name('profile');
+Route::get('/home', [HomeController::class, 'show'])->name('home');
 
 
 
