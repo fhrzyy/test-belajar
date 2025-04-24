@@ -4,11 +4,12 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\ProfileController;
 
 
 
 Route::get('/', function () {
-    return view('dashboard');
+    return view('layouts.dashboard'); // Tambahkan 'layouts.' sebelum 'dashboard'
 })->name('dashboard');
 
 Route::get('register', function () {
@@ -18,6 +19,7 @@ Route::get('login', function () {
     return view('auth.login');
 });
 
+Route::get('/profile', [ProfileController::class, 'show'])->name('profile');
 
 
 
