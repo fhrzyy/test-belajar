@@ -40,7 +40,7 @@
                     </ul>
                 </div>
             @endif
-            <h2 class="text-center mb-4">Daftar Akun</h2>
+            <h2 class="text-center mb-4">Daftar</h2>
             <form action="{{ route('register') }}" method="POST">
                 @csrf
                 <div class="mb-3">
